@@ -11,3 +11,5 @@ RGB Image -> 2D pose estimation
 
 독립적인 추정이 주어져서, 이미지 측정으로 2D pose를 예측할 수 있다. P(x|I) = CNN(I)로 이미지가 주어졌을때 2D 포즈의 조건을 모델링 할 수 있다. 여기서 CNN은 N개의 2D 히트맵을 반환하는 Non-linear function이라고 가정한다.
 개별 body joint에 대해 N개의 히트맵을 반환하는 convolution pose machine(CPMs)를 사용할 것이다. 히트맵을 정규화하여 히트맵을 각 joint의 주변분포(marginal distribution)으로 해석할 수 있다.
+
+CPM은 가장 최신의 포즈 추정 시스템이다.(MPII 데이터셋에서 88.5% PCKh라는 것이 나온다고 하는데, 가장 최신 값인 90.9%에 매우 근접하다고 한다.)
