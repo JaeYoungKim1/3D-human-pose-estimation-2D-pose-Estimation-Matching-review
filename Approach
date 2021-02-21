@@ -1,1 +1,8 @@
-wait
+2D pose x 는 joint수 * 2 차원의 실수텐서에 속해있고, 3D pose X는 joint수 * 3 차원의 실수텐서에 속해있다.
+결합확률의 일반적인 표현은 p(X,x,I) = p(X|x,I) * p(x|I) * p(I)로 나타낸다.
+
+조건부 독립) 3D pose X가 2D pose x로 주어진 이미지 I와 조건부로 독립적이라고 가정한다. 2D 스켈레톤이 주어지고 그에맞는 3D 스켈레톤의 예측을 할땐 2D 이미지 측정에 영향을 안받는다고 가정하는 것
+실제로는 아니지만, 1차 근사치로 보일 수 있다. 이 인수분해는 여전히 Image -> 2D pose인 p(x|I)를 임의로 복잡해지도록 하는데, occlusion동안 2D 프로젝션과 이미지 특징 간의 복잡한 상호작용을 모델링하는데 필요하다.
+ p(X,x,I) = p(X|x)*p(x|I)*p(I) 에서, P(X|x)는 P(X|x,I)에서 3D 포즈인 X와 이미지I가 독립적이라서 제외한 간단한 식이고 Nearest Neighbor 방법으로 2D pose를 3D pose로 바꿀 수 있다. 
+ p(x|I)는 RGB이미지에서 2D pose로 바꾸는 것으로, 히트맵을 예측하도록 CNN을 만들어 해결한다.
+RGB Image -> 2D pose estimation
