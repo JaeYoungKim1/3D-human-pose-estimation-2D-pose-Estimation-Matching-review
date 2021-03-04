@@ -13,4 +13,3 @@ RGB Image -> 2D pose estimation
 개별 body joint에 대해 N개의 히트맵을 반환하는 convolution pose machine(CPMs)를 사용할 것이다. 히트맵을 정규화하여 히트맵을 각 joint의 주변분포(marginal distribution)으로 해석할 수 있다.
 
 CPM은 가장 최신의 포즈 추정 시스템이다.(MPII 데이터셋에서 88.5% PCKh라는 것이 나온다고 하는데, 가장 최신 값인 90.9%에 매우 근접하다고 한다.) CPM은 MPII데이터셋으로 학습되었으며, 이 모델을 휴먼3.6M 학습셋으로 파인튜닝하였다.
-<b>ㅁㄴㅇㄹ</b>
